@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding Elections: Your Clear, Step-by-Step Guide</title>
+  <meta name="description" content="An interactive, accessible step-by-step election guide for first-time voters, students, and citizens. Explore election stages, procedural simulators, myth-busting, and readiness tools.">
+  <meta name="keywords" content="elections, voting process, voter registration, EVM simulator, VVPAT, first time voter, election timeline, ballot procedures">
+  
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:title" content="Understanding Elections: Your Clear, Step-by-Step Guide">
+  <meta property="og:description" content="Learn how elections work from voter registration to certified results with interactive simulators, error troubleshooting, and checklists.">
+  <meta property="og:type" content="website">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Top Accessibility Bar -->
+  <aside class="a11y-topbar" aria-label="Accessibility settings">
+    <div class="a11y-container">
+      <div class="a11y-status-pill">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>Democracy In Action • Official Educational Guide</span>
+      </div>
+      <div class="a11y-controls-group">
+        <span style="font-size: var(--fs-xs); color: #94a3b8;">Accessibility:</span>
+        <button type="button" class="a11y-btn" id="a11yContrastBtn" aria-pressed="false" title="Toggle High Contrast Mode">
+          🌓 High Contrast
+        </button>
+        <div class="font-scaler-group" style="display: inline-flex; gap: 4px;">
+          <button type="button" class="a11y-btn" id="a11yFontDecBtn" title="Decrease font size">A-</button>
+          <button type="button" class="a11y-btn active" id="a11yFontResetBtn" title="Default font size">A</button>
+          <button type="button" class="a11y-btn" id="a11yFontIncBtn" title="Increase font size">A+</button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Header & Navigation -->
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Primary Navigation">
+      <a href="#hero" class="nav-brand" aria-label="Understanding Elections Homepage">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">CivicGuide</span>
+          <span class="brand-tagline">Democracy Decoded</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="mainNavLinks">
+        <li><a href="#intro" class="nav-link">Why Vote</a></li>
+        <li><a href="#roadmap" class="nav-link">6 Stages</a></li>
+        <li><a href="#procedures" class="nav-link">Procedures</a></li>
+        <li><a href="#simulator" class="nav-link">EVM Simulator</a></li>
+        <li><a href="#errors" class="nav-link">Challenges & Fixes</a></li>
+        <li><a href="#myths" class="nav-link">Myths & Facts</a></li>
+        <li><a href="#checklist" class="nav-link">Checklist</a></li>
+        <li><a href="#quiz" class="nav-link">Quiz</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#checklist" class="btn-primary" style="font-size: var(--fs-xs); padding: 8px 14px;">
+          ✓ Get Election Ready
+        </a>
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="mainContent">
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>🗳️ First-Time Voter & Citizen Handbook</span>
+          </div>
+          <h1 class="hero-title">
+            Understanding Elections: <br>
+            <span class="text-gradient">Your Clear, Step-by-Step Guide</span>
+          </h1>
+          <p class="hero-desc">
+            Democracy only thrives when every citizen knows their rights and understands the journey from registration to verified results. Discover timelines, explore interactive procedures, test the voting booth simulator, and debunk common myths.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#roadmap" class="btn-primary">
+              <span>Explore Election Roadmap</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#simulator" class="btn-secondary">
+              <span>Try Voting Booth Simulator</span>
+              <span aria-hidden="true">🕹️</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Secret & Anonymous Ballot</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">6 Stages</span>
+              <span class="stat-label">From Roll to Certification</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">12+</span>
+              <span class="stat-label">Accepted Alternative IDs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <div class="hero-card-header">
+              <div>
+                <h3 style="font-size: var(--fs-base); font-weight: 700; color: var(--primary-navy);">The Election Journey</h3>
+                <span style="font-size: var(--fs-xs); color: var(--text-subtle);">Transparent, Audited & Citizen-Powered</span>
+              </div>
+              <span class="card-header-badge">● Fully Audited</span>
+            </div>
+
+            <div class="hero-roadmap-preview">
+              <div class="roadmap-step-mini">
+                <div class="step-mini-num">1</div>
+                <div class="step-mini-text">
+                  <h4>Roll Enrollment & ID</h4>
+                  <p>Register online/offline & verify active status</p>
+                </div>
+              </div>
+              <div class="roadmap-step-mini">
+                <div class="step-mini-num">2</div>
+                <div class="step-mini-text">
+                  <h4>Candidate Nominations</h4>
+                  <p>Affidavits, public scrutiny & symbol allocation</p>
+                </div>
+              </div>
+              <div class="roadmap-step-mini">
+                <div class="step-mini-num">3</div>
+                <div class="step-mini-text">
+                  <h4>Campaigns & Silence Period</h4>
+                  <p>Manifestos followed by 48-hr quiet reflection</p>
+                </div>
+              </div>
+              <div class="roadmap-step-mini">
+                <div class="step-mini-num">4</div>
+                <div class="step-mini-text">
+                  <h4>Voting Day in the Booth</h4>
+                  <p>Inked finger, secret ballot, and 7-sec paper slip</p>
+                </div>
+              </div>
+              <div class="roadmap-step-mini">
+                <div class="step-mini-num">5</div>
+                <div class="step-mini-text">
+                  <h4>Counting & VVPAT Audit</h4>
+                  <p>Strong room unsealing & physical slip match</p>
+                </div>
+              </div>
+              <div class="roadmap-step-mini">
+                <div class="step-mini-num">6</div>
+                <div class="step-mini-text">
+                  <h4>Declaration & Oath</h4>
+                  <p>Certificate of Election & peaceful governance</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction & Core Pillars -->
+    <section class="section section-alt" id="intro">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Democracy Foundation</span>
+          <h2 class="section-title">What Are Elections & Why Do They Matter?</h2>
+          <p class="section-subtitle">
+            An election is more than a ritual of casting slips; it is the constitutional mechanism by which free people choose their leaders, hold power accountable, and determine public policies.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Popular Sovereignty</h3>
+            <p class="pillar-desc">
+              All political authority originates with the people. Voting guarantees that government legitimacy is derived directly from the consent of the governed, ensuring equal voice regardless of wealth or background.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Peaceful Accountability</h3>
+            <p class="pillar-desc">
+              Elections create a predictable, peaceful mechanism to reward capable representatives and replace those who fail their constituents, averting civil instability through institutional trust.
+            </p>
+          </article>
+
+          <article class="pillar-card">
+            <div class="pillar-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="pillar-title">Direct Policy Impact</h3>
+            <p class="pillar-desc">
+              From school funding and healthcare infrastructure to tax laws and climate policy, election outcomes shape everyday living conditions for millions of households.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Infographic & Detailed Election Stages -->
+    <section class="section" id="roadmap">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Interactive Timeline & Stages</span>
+          <h2 class="section-title">The 6 Key Stages of an Election</h2>
+          <p class="section-subtitle">
+            Click on any stage below to inspect statutory deadlines, what citizens need to do, and the transparency checks running behind the scenes.
+          </p>
+        </div>
+
+        <!-- 6-Stage Interactive Infographic Roadmap -->
+        <div class="roadmap-infographic">
+          <div class="roadmap-header">
+            <h3 style="font-size: var(--fs-base); font-weight: 700; color: var(--primary-navy);">
+              Visual Election Process Pipeline
+            </h3>
+            <span style="font-size: var(--fs-xs); color: var(--text-subtle);">
+              Click any step to open deep-dive
+            </span>
+          </div>
+
+          <div class="roadmap-track" id="roadmapTrack" role="tablist" aria-label="Election Stages Navigation">
+            <!-- Dynamically populated by js/app.js -->
+          </div>
+        </div>
+
+        <!-- Detailed Stage Explorer Card Container -->
+        <div id="stageExplorerWrap" aria-live="polite">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Procedures Explained & EVM / Ballot Simulator -->
+    <section class="section section-alt" id="procedures">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Step-By-Step Walkthroughs</span>
+          <h2 class="section-title">Core Election Procedures Explained</h2>
+          <p class="section-subtitle">
+            Clear, step-by-step instructions for every stage of your voting journey—from enrolling online to entering the secret voting booth.
+          </p>
+        </div>
+
+        <!-- Procedure Tabs -->
+        <div class="procedure-tabs" id="procedureTabs" role="tablist" aria-label="Procedure Categories">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+
+        <!-- Step Cards -->
+        <div class="procedure-steps-container" id="procedureStepsContainer">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+
+        <!-- Interactive EVM & Ballot Simulator Console -->
+        <div class="simulator-wrapper" id="simulator">
+          <div class="simulator-intro">
+            <span class="section-eyebrow" style="color: var(--accent-emerald);">Hands-On Simulation</span>
+            <h3>Interactive Electronic Voting & VVPAT Simulator</h3>
+            <p>
+              Experience exactly how a secure secret ballot works in the voting booth. Press <strong>VOTE</strong> for any candidate, observe the red LED flash, listen for the confirmation tone, and watch the 7-second VVPAT verification paper slip print in the transparent window.
+            </p>
+          </div>
+
+          <div class="evm-layout">
+            <!-- Simulated Ballot Unit -->
+            <div class="ballot-unit">
+              <div class="ballot-header">
+                <span class="ballot-unit-title">BALLOT UNIT • INDIAN PARLIAMENTARY ELECTION</span>
+                <div class="ready-lamp">
+                  <span class="ready-lamp-dot"></span>
+                  <span>READY LAMP ACTIVE</span>
+                </div>
+              </div>
+
+              <!-- Coalition / Party Filters -->
+              <div class="ballot-filter-bar" id="ballotFilterBar" role="toolbar" aria-label="Filter candidates by coalition">
+                <button type="button" class="ballot-filter-btn active" data-filter="ALL">All Parties (7)</button>
+                <button type="button" class="ballot-filter-btn" data-filter="I.N.D.I.A.">I.N.D.I.A. Bloc Members (5)</button>
+                <button type="button" class="ballot-filter-btn" data-filter="NDA">NDA Coalition (1)</button>
+              </div>
+
+              <div class="candidate-list" id="evmCandidateList">
+                <!-- Dynamically populated by js/simulator.js -->
+              </div>
+            </div>
+
+            <!-- Simulated VVPAT Unit -->
+            <div class="vvpat-unit">
+              <span class="vvpat-title">VVPAT PAPER AUDIT UNIT</span>
+              
+              <div class="vvpat-display-window" aria-live="assertive" id="vvpatDisplayWindow">
+                <div class="vvpat-slip" id="vvpatSlip">
+                  <div class="slip-header">OFFICIAL AUDIT SLIP</div>
+                  <div id="slipCandidateInfo">
+                    <span>🪷 Narendra Modi</span>
+                  </div>
+                  <div style="font-size: 10px; color: #475569;" id="slipSerial">SL #1 | Bharatiya Janata Party (BJP)</div>
+                  <div style="margin-top: 8px; border-top: 1px dashed #cbd5e1; padding-top: 4px; font-size: 9px; text-align: center;">
+                    VERIFIED ENCRYPTED VOTE
+                  </div>
+                </div>
+                <div class="vvpat-timer-bar" id="vvpatTimerBar"></div>
+              </div>
+
+              <div class="simulator-status-box" id="simulatorStatusBox">
+                <strong>Unit Ready for Voter</strong>
+                Select any candidate to test the ballot process and audit slip.
+              </div>
+
+              <button type="button" class="simulator-reset-btn" id="simulatorResetBtn">
+                🔄 Reset Simulator / Next Test
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Common Errors & Challenges Troubleshooter -->
+    <section class="section" id="errors">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Problem Solver & Rights Guide</span>
+          <h2 class="section-title">Common Errors, Challenges & Solutions</h2>
+          <p class="section-subtitle">
+            Encountered an obstacle? Don't forfeit your vote. Explore instant solutions for voter ID discrepancies, missing names, rejected mail ballots, and online rumors.
+          </p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="troubleshooter-filter-bar" id="troubleshooterFilterBar" role="toolbar" aria-label="Filter challenges by category">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+
+        <!-- Errors Grid -->
+        <div class="errors-grid" id="errorsGrid">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+
+        <!-- Golden Rule Card -->
+        <div style="margin-top: 40px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-lg); padding: 24px 30px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <div style="font-size: 2.2rem;">💡</div>
+          <div style="flex: 1; min-width: 260px;">
+            <h4 style="font-size: var(--fs-base); font-weight: 700; color: var(--primary-navy); margin-bottom: 4px;">
+              Golden Rule on Polling Day: You Have the Right to Ask the Presiding Officer!
+            </h4>
+            <p style="font-size: var(--fs-sm); color: var(--text-muted);">
+              If an officer challenges your identity or your name has a typo, do not leave. Request to speak immediately with the Presiding Officer. You can establish identity with alternative government IDs or cast a statutory <strong>Tendered Vote</strong>.
+            </p>
+          </div>
+          <a href="#resources" class="btn-primary" style="font-size: var(--fs-xs);">
+            View Emergency Helplines
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Myths vs Facts & Searchable FAQs -->
+    <section class="section section-alt" id="myths">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Truth & Integrity</span>
+          <h2 class="section-title">Election Myth-Busting</h2>
+          <p class="section-subtitle">
+            Misinformation erodes democratic trust. Click on any myth card to flip it and reveal the verified facts and technical realities.
+          </p>
+        </div>
+
+        <!-- Myth Flipper Grid -->
+        <div class="myths-grid" id="mythsGrid">
+          <!-- Dynamically populated by js/app.js -->
+        </div>
+
+        <!-- Searchable FAQs -->
+        <div style="margin-top: 70px;">
+          <div class="section-header">
+            <span class="section-eyebrow">Got Questions?</span>
+            <h3 class="section-title">Frequently Asked Questions</h3>
+            <p class="section-subtitle">Search common queries about qualifications, documentation, and booth rules.</p>
+          </div>
+
+          <div class="faq-search-wrapper">
+            <svg class="faq-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="faq-search-input" id="faqSearchInput" placeholder="Search FAQs (e.g., NOTA, alternative ID, age 18, mobile phone...)" aria-label="Search FAQs">
+          </div>
+
+          <div class="faq-accordion" id="faqAccordion">
+            <!-- Dynamically populated by js/app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement Hub: Voter Checklist & Civic Literacy Quiz -->
+    <section class="section" id="checklist">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Interactive Voter Kit</span>
+          <h2 class="section-title">Personalized Election Day Readiness Checklist</h2>
+          <p class="section-subtitle">
+            Tick off each item to ensure smooth, hassle-free voting on election day. You can print or save your checklist!
+          </p>
+        </div>
+
+        <!-- Checklist Card -->
+        <div class="checklist-card">
+          <div class="checklist-header">
+            <div>
+              <h3 style="font-size: var(--fs-lg); font-weight: 700; color: var(--primary-navy);">
+                What to Bring & Prepare
+              </h3>
+              <span style="font-size: var(--fs-xs); color: var(--text-subtle);">
+                Personal Readiness Checklist
+              </span>
+            </div>
+            <div class="checklist-progress-stat" id="checklistProgressStat">
+              <span>0/6 Ready (0%)</span>
+            </div>
+          </div>
+
+          <div class="checklist-items-grid" id="checklistItemsGrid">
+            <!-- Dynamically populated by js/checklist.js -->
+          </div>
+
+          <div class="checklist-actions">
+            <button type="button" class="btn-secondary" id="checklistResetBtn">
+              Reset Checklist
+            </button>
+            <button type="button" class="btn-primary" id="checklistPrintBtn">
+              🖨️ Print My Checklist
+            </button>
+          </div>
+        </div>
+
+        <!-- Civic Knowledge Quiz Section -->
+        <div style="margin-top: 80px;" id="quiz">
+          <div class="section-header">
+            <span class="section-eyebrow">Knowledge Challenge</span>
+            <h3 class="section-title">Test Your Election Literacy</h3>
+            <p class="section-subtitle">
+              Answer 5 quick scenarios to test your voter awareness and earn your verified <strong>Certified Informed Voter</strong> certificate!
+            </p>
+          </div>
+
+          <div class="quiz-card">
+            <!-- Question Screen -->
+            <div id="quizQuestionScreen">
+              <div class="quiz-progress-bar-wrap">
+                <div class="quiz-progress-bar" id="quizProgressBar"></div>
+              </div>
+              <div class="quiz-meta" id="quizMeta">Question 1 of 5</div>
+              <h4 class="quiz-question-text" id="quizQuestionText">Loading Question...</h4>
+              <div class="quiz-options-list" id="quizOptionsList"></div>
+              <div class="quiz-feedback-box" id="quizFeedbackBox" role="status"></div>
+              <div class="quiz-controls" style="display: flex; justify-content: flex-end; align-items: center; gap: 12px;">
+                <button type="button" class="btn-primary" id="quizNextBtn" disabled>
+                  Next Question →
+                </button>
+              </div>
+            </div>
+
+            <!-- Results & Certificate Screen -->
+            <div class="quiz-result-screen" id="quizResultScreen">
+              <div class="cert-badge-seal">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </div>
+              <h3 style="font-family: var(--font-heading); font-size: var(--fs-2xl); color: var(--primary-navy); margin-bottom: 6px;">
+                Quiz Completed!
+              </h3>
+              <p style="font-size: var(--fs-md); font-weight: 700; color: var(--primary-bright);" id="quizScoreGrade">
+                Certified Informed Voter
+              </p>
+              <p style="font-size: var(--fs-sm); color: var(--text-muted); margin-bottom: 20px;">
+                Your Score: <strong id="quizScoreText">5 / 5 (100%)</strong>
+              </p>
+
+              <!-- Certificate Card -->
+              <div class="certificate-card">
+                <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary-bright); font-weight: 700;">
+                  OFFICIAL CIVIC RECOGNITION
+                </span>
+                <h4 style="font-family: var(--font-heading); font-size: var(--fs-xl); color: var(--primary-navy); margin: 8px 0;">
+                  Certificate of Election Readiness
+                </h4>
+                <p style="font-size: var(--fs-xs); color: var(--text-subtle); margin-bottom: 12px;">This certifies that</p>
+                <div>
+                  <input type="text" class="cert-name-input" id="certNameInput" value="Dedicated Citizen" title="Click to enter your name for certificate">
+                </div>
+                <p style="font-size: var(--fs-xs); color: var(--text-muted); max-width: 480px; margin: 10px auto;">
+                  Has demonstrated comprehensive knowledge of the democratic election process, secret ballot protections, voter rights, and ethical civic participation.
+                </p>
+                <div style="margin-top: 14px; font-size: 11px; color: var(--accent-emerald); font-weight: 700;">
+                  VERIFIED CIVIC LITERACY • VALID FOR ALL ELECTIONS
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+                <button type="button" class="btn-primary" id="certPrintBtn">
+                  🖨️ Print / Save Certificate
+                </button>
+                <button type="button" class="btn-secondary" id="quizRestartBtn">
+                  🔄 Retake Quiz
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resource Directory & Helplines -->
+    <section class="section section-alt" id="resources">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-eyebrow">Authoritative Sources</span>
+          <h2 class="section-title">Official Resources & Helplines</h2>
+          <p class="section-subtitle">
+            Direct access to government election portals, toll-free helpline numbers, statutory forms, and official grievance apps.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+          <!-- Card 1: Official Portal -->
+          <div class="pillar-card">
+            <div class="pillar-icon-box" style="background: var(--primary-light); color: var(--primary-bright);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h4 class="pillar-title">National Voter Service Portal</h4>
+            <p class="pillar-desc">
+              Search the electoral roll, download your digital e-EPIC card, track application statuses, and update addresses directly on the official commission portal.
+            </p>
+            <div style="margin-top: auto; padding-top: 14px;">
+              <a href="https://voters.eci.gov.in" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: 100%; justify-content: center; font-size: var(--fs-xs);">
+                Visit voters.eci.gov.in ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Official Helpline -->
+          <div class="pillar-card">
+            <div class="pillar-icon-box" style="background: #eff6ff; color: #0284c7;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <h4 class="pillar-title">Toll-Free Voter Helpline 1950</h4>
+            <p class="pillar-desc">
+              Connect with election officials 24/7. Inquire about polling booth location, registration problems, or lodge urgent complaints regarding polling misconduct.
+            </p>
+            <div style="margin-top: auto; padding-top: 14px;">
+              <a href="tel:1950" class="btn-primary" style="width: 100%; justify-content: center; font-size: var(--fs-xs); background: #0284c7;">
+                📞 Call 1950 (Toll-Free)
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Statutory Forms -->
+          <div class="pillar-card">
+            <div class="pillar-icon-box" style="background: var(--accent-emerald-light); color: var(--accent-emerald);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h4 class="pillar-title">Authorized Electoral Forms</h4>
+            <p class="pillar-desc">
+              <strong>Form 6:</strong> New voter enrollment (18+).<br>
+              <strong>Form 7:</strong> Deletion / Objection to names.<br>
+              <strong>Form 8:</strong> Address change & details correction.
+            </p>
+            <div style="margin-top: auto; padding-top: 14px;">
+              <a href="https://eci.gov.in" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: 100%; justify-content: center; font-size: var(--fs-xs);">
+                Download Official Forms ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Vigilance & Watchdog -->
+          <div class="pillar-card">
+            <div class="pillar-icon-box" style="background: var(--accent-amber-light); color: var(--accent-amber);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <h4 class="pillar-title">Report Misconduct (cVIGIL)</h4>
+            <p class="pillar-desc">
+              Report illegal gifts, hate speeches, cash bribes, or Code of Conduct violations by uploading geotagged photos or 2-minute videos to election flying squads.
+            </p>
+            <div style="margin-top: auto; padding-top: 14px;">
+              <a href="https://eci.gov.in/cvigil/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: 100%; justify-content: center; font-size: var(--fs-xs);">
+                Learn About cVIGIL ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive CivicBot Assistant Widget -->
+  <button type="button" class="chatbot-launcher" id="chatbotLauncher" aria-label="Open CivicBot Voter Assistant">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <div class="chatbot-modal" id="chatbotModal" role="dialog" aria-label="CivicBot Interactive Assistant">
+    <div class="chatbot-header">
+      <div class="chatbot-title-wrap">
+        <div class="chatbot-avatar" aria-hidden="true">🤖</div>
+        <div class="chatbot-title">
+          <h4>CivicBot Assistant</h4>
+          <span>Ask anything about voting</span>
+        </div>
+      </div>
+      <button type="button" class="chatbot-close-btn" id="chatbotCloseBtn" aria-label="Close Assistant">✕</button>
+    </div>
+
+    <div class="chatbot-messages-wrap" id="chatbotMessagesWrap">
+      <div class="chat-bubble bot">
+        Hello! I'm <strong>CivicBot</strong>, your election guide assistant. Ask me anything about voter registration, accepted IDs, EVMs, timelines, or report hotlines!
+      </div>
+    </div>
+
+    <div class="chat-chips-row" id="chatbotChipsRow">
+      <!-- Dynamically populated by js/chatbot.js -->
+    </div>
+
+    <div class="chatbot-input-row">
+      <input type="text" id="chatbotInput" placeholder="Ask about IDs, EVM, rules..." aria-label="Type your election question">
+      <button type="button" class="chatbot-send-btn" id="chatbotSendBtn" aria-label="Send message">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4 style="display: flex; align-items: center; gap: 8px;">
+            <span>🗳️ Understanding Elections Guide</span>
+          </h4>
+          <p>
+            An independent, non-partisan civic educational resource built to empower first-time voters, students, educators, and citizens with complete clarity on democratic election processes.
+          </p>
+          <p style="font-size: var(--fs-xs); color: #64748b;">
+            Empowering voters with truth, transparency, and accessible civic knowledge.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#roadmap">6 Election Stages</a></li>
+            <li><a href="#procedures">Procedures Walkthrough</a></li>
+            <li><a href="#simulator">EVM & Ballot Simulator</a></li>
+            <li><a href="#errors">Challenges & Solutions</a></li>
+            <li><a href="#myths">Myth-Busting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Engagement Tools</h4>
+          <ul class="footer-links">
+            <li><a href="#checklist">Readiness Checklist</a></li>
+            <li><a href="#quiz">Civic Literacy Quiz</a></li>
+            <li><a href="#resources">Official Helplines</a></li>
+            <li><a href="#resources">Authorized Forms</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Emergency Helpline</h4>
+          <div class="helpline-box">
+            <span style="font-size: var(--fs-xs); color: #94a3b8; display: block; margin-bottom: 4px;">National Voter Helpline</span>
+            <span class="helpline-number">1950</span>
+            <p style="font-size: 11px; color: #94a3b8; margin: 6px 0 0;">
+              Toll-free 24/7 citizen voter support in multiple languages.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Understanding Elections Guide. Built for Public Civic Literacy. Non-Partisan & Open Access.</p>
+        <p>Design System: WCAG 2.1 AAA Accessible • Privacy-First (No tracking)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/checklist.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

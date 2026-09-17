@@ -1,0 +1,166 @@
+/* ==========================================================================
+   Understanding Elections: Accessibility & Print Overrides
+   WCAG AAA compliance, high-contrast, scalable text, and clean print views
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Font Size Modifiers
+   ========================================================================== */
+html[data-fontsize="large"] {
+  --fs-root: 18px;
+}
+
+html[data-fontsize="small"] {
+  --fs-root: 14px;
+}
+
+/* ==========================================================================
+   2. Accessible Focus Visibility (WCAG 2.4.7)
+   ========================================================================== */
+:focus-visible {
+  outline: 3px solid #2563eb !important;
+  outline-offset: 2px !important;
+}
+
+/* ==========================================================================
+   3. High-Contrast Theme (data-theme="high-contrast")
+   ========================================================================== */
+html[data-theme="high-contrast"] {
+  --primary-navy: #000000;
+  --primary-deep: #050505;
+  --primary-blue: #0044cc;
+  --primary-bright: #002299;
+  --primary-light: #e6f0ff;
+  --primary-subtle: #99c2ff;
+
+  --accent-emerald: #006622;
+  --accent-emerald-light: #e6ffe6;
+  --accent-amber: #995500;
+  --accent-amber-light: #fff2cc;
+  --accent-coral: #cc0000;
+  --accent-coral-light: #ffe6e6;
+
+  --surface-bg: #ffffff;
+  --surface-card: #ffffff;
+  --surface-card-hover: #f0f0f0;
+  --surface-border: #000000;
+  --surface-border-subtle: #444444;
+
+  --text-main: #000000;
+  --text-muted: #111111;
+  --text-subtle: #222222;
+
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: 0 0 0 2px #000000;
+  --shadow-xl: 0 0 0 3px #000000;
+}
+
+html[data-theme="high-contrast"] body {
+  background: #ffffff;
+  color: #000000;
+}
+
+html[data-theme="high-contrast"] .site-header {
+  background: #ffffff;
+  border-bottom: 3px solid #000000;
+}
+
+html[data-theme="high-contrast"] .hero-section {
+  background: #ffffff;
+  border-bottom: 3px solid #000000;
+}
+
+html[data-theme="high-contrast"] .pillar-card,
+html[data-theme="high-contrast"] .stage-explorer-card,
+html[data-theme="high-contrast"] .step-card,
+html[data-theme="high-contrast"] .error-card,
+html[data-theme="high-contrast"] .quiz-card,
+html[data-theme="high-contrast"] .checklist-card,
+html[data-theme="high-contrast"] .simulator-wrapper {
+  border: 2px solid #000000 !important;
+}
+
+html[data-theme="high-contrast"] .roadmap-node {
+  border: 2px solid #000000 !important;
+}
+
+html[data-theme="high-contrast"] .node-icon-circle {
+  border: 2px solid #000000 !important;
+}
+
+html[data-theme="high-contrast"] .btn-primary {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000;
+}
+
+html[data-theme="high-contrast"] .btn-secondary {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+html[data-theme="high-contrast"] .stage-card-header {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-bottom: 2px solid #ffffff;
+}
+
+html[data-theme="high-contrast"] .site-footer {
+  background: #000000 !important;
+  border-top: 3px solid #ffffff;
+}
+
+/* ==========================================================================
+   4. Reduced Motion Preferences
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================================================
+   5. Clean Print Stylesheet (@media print)
+   ========================================================================== */
+@media print {
+  /* Hide non-essential interactive components when printing */
+  .a11y-topbar,
+  .site-header,
+  .mobile-menu-toggle,
+  .chatbot-launcher,
+  .chatbot-modal,
+  .simulator-wrapper,
+  .quiz-controls,
+  .checklist-actions,
+  .site-footer {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  .section {
+    padding: 20px 0 !important;
+    page-break-inside: avoid;
+  }
+
+  .checklist-card, .stage-explorer-card, .certificate-card {
+    box-shadow: none !important;
+    border: 1px solid #000000 !important;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #444;
+  }
+}
